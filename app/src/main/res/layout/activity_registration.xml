@@ -70,7 +70,7 @@
 
 
     <TextView
-        android:id="@+id/singup_btn"
+        android:id="@+id/registration_btn"
         android:textSize="22sp"
         android:text="Sign Up"
         android:textColor="#fff"
