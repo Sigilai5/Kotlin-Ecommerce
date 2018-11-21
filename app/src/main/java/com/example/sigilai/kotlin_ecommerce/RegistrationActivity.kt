@@ -1,5 +1,6 @@
 package com.example.sigilai.kotlin_ecommerce
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -27,7 +28,11 @@ class RegistrationActivity : AppCompatActivity() {
                     if(response.equals("0"))
                         Toast.makeText(this,"Mobile number already exists",Toast.LENGTH_LONG).show()
                     else
+
+                        startActivity(Intent(this,HomeActivity::class.java))
+
                         Toast.makeText(this,"User created Successfull!",Toast.LENGTH_LONG).show()
+
 
                 },Response.ErrorListener { error ->
                     Toast.makeText(this,error.message,Toast.LENGTH_LONG).show()

@@ -20,15 +20,18 @@ class MainActivity : AppCompatActivity() {
 
         login_btn.setOnClickListener {
 
-        var url = "http://192.168.0.42/Kotlin-Eccomerce/login.php?mobile=" + registration_mobile.text.toString() + "&password=" + registration_password.text.toString()
+        var url = "http://192.168.0.42/Kotlin-Eccomerce/login.php?mobile=" + login_mobile.text.toString() + "&password=" + login_password.text.toString()
 
         var rq: RequestQueue = Volley.newRequestQueue(this)
         var sr= StringRequest(Request.Method.GET,url, Response.Listener { response ->
-            if(response.equals("Invalid credentials"))
+            if(response.equals("0"))
                 Toast.makeText(this,"Invalid credentials", Toast.LENGTH_LONG).show()
-            else
-                Toast.makeText(this,"Logged in Successfull!", Toast.LENGTH_LONG).show()
+            else {
+                Toast.makeText(this, "Login Successfull!", Toast.LENGTH_LONG).show()
 
+                var intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+            }
         }, Response.ErrorListener { error ->
             Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
 
