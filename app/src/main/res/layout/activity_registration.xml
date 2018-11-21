@@ -1,9 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#404040"
     tools:context=".RegistrationActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/registration_mobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Mobile Number"
+        android:textColor="#fff"
+        android:textColorHint="#fff"
+        android:ems="10"
+        android:inputType="phone"
+        android:layout_margin="20dp"
+        />
+
+    <EditText
+        android:id="@+id/registration_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Name"
+        android:textColor="#fff"
+        android:textColorHint="#fff"
+        android:ems="10"
+        android:inputType="text"
+        android:layout_margin="20dp"
+        />
+
+    <EditText
+        android:id="@+id/registration_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Address"
+        android:textColor="#fff"
+        android:textColorHint="#fff"
+        android:ems="10"
+        android:inputType="text"
+        android:layout_margin="20dp"
+        />
+
+    <EditText
+        android:id="@+id/registration_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Password"
+        android:textColor="#fff"
+        android:textColorHint="#fff"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:layout_margin="20dp"
+        />
+
+    <EditText
+        android:id="@+id/confirm_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Confirm Password"
+        android:textColor="#fff"
+        android:textColorHint="#fff"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:layout_margin="20dp"
+        />
+
+
+    <TextView
+        android:id="@+id/singup_btn"
+        android:textSize="22sp"
+        android:text="Sign Up"
+        android:textColor="#fff"
+        android:gravity="center"
+        android:background="#0055dd"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
