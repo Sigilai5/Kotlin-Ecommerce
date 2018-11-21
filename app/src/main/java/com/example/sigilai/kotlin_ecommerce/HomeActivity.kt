@@ -1,5 +1,6 @@
 package com.example.sigilai.kotlin_ecommerce
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -17,6 +18,8 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+                        /**LOAD DATA TO LIST VIEW**/
+
         var url = "http://192.168.0.42/Kotlin-Eccomerce/get_category.php"
         var list=ArrayList<String>()
         var rq:RequestQueue=Volley.newRequestQueue(this)
@@ -25,13 +28,23 @@ class HomeActivity : AppCompatActivity() {
             for (x in 0..response.length()-1)
                 list.add(response.getJSONObject(x).getString("category"))
 
-            var adp=ArrayAdapter(this,android.R.layout.simple_list_item_1,list)
+            var adp=ArrayAdapter(this,R.layout.my_textview,list)
             list_category.adapter=adp
 
         },Response.ErrorListener { error ->
             Toast.makeText(this,error.message,Toast.LENGTH_LONG).show()
         })
         rq.add(jar)
+
+                        /**WHEN A CAREGORY IS CLICKED IN LIST VIEW**/
+
+        list_category.setOnItemClickListener { parent, view, position, id ->
+
+            var cat:String=list[position]
+            var obj=Intent
+
+        }
+
 
     }
 }
