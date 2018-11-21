@@ -41,7 +41,9 @@ class HomeActivity : AppCompatActivity() {
         list_category.setOnItemClickListener { parent, view, position, id ->
 
             var cat:String=list[position]
-            var obj=Intent
+            var obj=Intent(this,ItemActivity::class.java)
+            obj.putExtra("cat",cat) //The "name" passes the category variable cat to ItemActivity
+            startActivity(obj)
 
         }
 
