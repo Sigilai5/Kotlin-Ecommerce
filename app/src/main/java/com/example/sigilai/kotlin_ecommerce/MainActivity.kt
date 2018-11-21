@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
             else {
                 Toast.makeText(this, "Login Successfull!", Toast.LENGTH_LONG).show()
 
+                UserInfo.mobile = login_mobile.text.toString()
                 var intent = Intent(this, HomeActivity::class.java)
                 startActivity(intent)
             }

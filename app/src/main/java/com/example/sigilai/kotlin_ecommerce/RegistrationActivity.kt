@@ -27,13 +27,15 @@ class RegistrationActivity : AppCompatActivity() {
                 var sr=StringRequest(Request.Method.GET,url,Response.Listener { response ->
                     if(response.equals("0"))
                         Toast.makeText(this,"Mobile number already exists",Toast.LENGTH_LONG).show()
-                    else
+                    else {
 
-                        startActivity(Intent(this,HomeActivity::class.java))
+                        UserInfo.mobile = registration_mobile.text.toString()
+                        var intent = Intent(this,HomeActivity::class.java)
+                        startActivity(intent)
 
-                        Toast.makeText(this,"User created Successfull!",Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, "User created Successfully!", Toast.LENGTH_LONG).show()
 
-
+                    }
                 },Response.ErrorListener { error ->
                     Toast.makeText(this,error.message,Toast.LENGTH_LONG).show()
 
