@@ -3,7 +3,14 @@ package com.example.sigilai.kotlin_ecommerce
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import com.android.volley.Request
+import com.android.volley.RequestQueue
+import com.android.volley.Response
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_registration.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,6 +18,26 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        login_btn.setOnClickListener {
+
+        var url = "http://192.168.0.42/Kotlin-Eccomerce/login.php?mobile=" + registration_mobile.text.toString() + "&password=" + registration_password.text.toString()
+
+        var rq: RequestQueue = Volley.newRequestQueue(this)
+        var sr= StringRequest(Request.Method.GET,url, Response.Listener { response ->
+            if(response.equals("Invalid credentials"))
+                Toast.makeText(this,"Invalid credentials", Toast.LENGTH_LONG).show()
+            else
+                Toast.makeText(this,"Logged in Successfull!", Toast.LENGTH_LONG).show()
+
+        }, Response.ErrorListener { error ->
+            Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
+
+        })
+
+        rq.add(sr)
+        }
+
+                        /**WHEN SIGN UP BUTTON IS PRESSED**/
         signup_btn.setOnClickListener {
 
             var intent = Intent(this,RegistrationActivity::class.java)
