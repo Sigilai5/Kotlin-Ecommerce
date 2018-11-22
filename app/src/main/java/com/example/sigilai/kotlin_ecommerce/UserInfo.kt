@@ -4,6 +4,8 @@ class UserInfo {
 
     companion object {
         var mobile:String=""
+        var itemId:Int=0
+        var quantity:Int=0
     }
 
 

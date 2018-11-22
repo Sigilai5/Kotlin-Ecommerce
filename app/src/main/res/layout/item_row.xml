@@ -19,6 +19,7 @@
         <TextView
             android:id="@+id/item_name"
             android:text="Chicken Pizza"
+            android:textColor="#fff"
             android:textSize="20sp"
             android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
@@ -26,6 +27,7 @@
 
         <TextView
             android:id="@+id/item_price"
+            android:textColor="#fff"
             android:text="3.5"
             android:textSize="20sp"
             android:layout_marginTop="15dp"
@@ -33,6 +35,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_launcher_background"
+            android:id="@+id/item_add_photo"
+            android:maxWidth="15dp"
+            android:layout_marginLeft="15dp"
+            />
 
     </LinearLayout>
 
