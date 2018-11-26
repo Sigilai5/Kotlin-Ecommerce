@@ -1,5 +1,6 @@
 package com.example.sigilai.kotlin_ecommerce
 
+import android.app.Activity
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -15,7 +16,8 @@ import java.util.ArrayList
 
 class ItemAdapter(var c:Context,var list: ArrayList<Item>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    /*Connect Recycler View to layout main activity*/
+                                /*Connect Recycler View to layout main activity*/
+
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): RecyclerView.ViewHolder {
         var my_view=LayoutInflater.from(c).inflate(R.layout.item_row,p0,false)
         return ItemHolder(my_view)
@@ -43,7 +45,12 @@ class ItemAdapter(var c:Context,var list: ArrayList<Item>) : RecyclerView.Adapte
 
             itemView.item_add_photo.setOnClickListener {
 
-                UserInfo.itemId=item_id
+                UserInfo.itemId=item_id //we pass the item id
+
+
+                var obj=QuantityFragment()
+                var manager=(itemView.context as Activity).fragmentManager
+                obj.show(manager,"Qty")
 
             }
 
@@ -51,8 +58,3 @@ class ItemAdapter(var c:Context,var list: ArrayList<Item>) : RecyclerView.Adapte
 
     }
 }
-
-
-
-
-

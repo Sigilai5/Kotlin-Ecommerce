@@ -5,10 +5,20 @@
     android:layout_height="match_parent"
     tools:context=".QuantityFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <Button
+        android:id="@+id/btn_quantity"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Add" />
+
+    <EditText
+        android:id="@+id/et_quantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter Quantity"
+        android:inputType="number" />
 
 </FrameLayout>
