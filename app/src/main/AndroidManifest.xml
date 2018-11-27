@@ -24,7 +24,8 @@
             android:name=".ItemActivity"
             android:launchMode="singleTop" />
         <activity android:name=".OrderActivity" />
-        <activity android:name=".TotalActivity"></activity>
+        <activity android:name=".TotalActivity" />
+        <activity android:name=".ConfirmActivity"></activity>
     </application>
 
 </manifest>
