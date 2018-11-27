@@ -49,13 +49,13 @@ class TotalActivity : AppCompatActivity() {
 
         paypal_btn.setOnClickListener {
 
-            amount=total_order.toString().toDouble()
+            amount=total_order.text.toString().toDouble()
             var payment=PayPalPayment(BigDecimal.valueOf(amount),"USD","Kotlin Ecommerce",PayPalPayment.PAYMENT_INTENT_SALE)
 
             var intent=Intent(this,PaymentActivity::class.java)
             intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION,config)
             intent.putExtra(PaymentActivity.EXTRA_PAYMENT,payment)
-            startActivity(intent,123)
+            startActivityForResult(intent,123)
 
         }
 
@@ -67,7 +67,8 @@ class TotalActivity : AppCompatActivity() {
         {
             if (resultCode==Activity.RESULT_OK)
             {
-                var obj=Intent(this)
+                var obj=Intent(this,ConfirmActivity::class.java)
+                startActivity(obj)
             }
         }
 
@@ -77,5 +78,8 @@ class TotalActivity : AppCompatActivity() {
         stopService(Intent(this,PayPalService::class.java))
         super.onDestroy()
     }
+
+
+    
 
 }

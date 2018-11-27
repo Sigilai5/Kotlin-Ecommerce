@@ -31,7 +31,9 @@ class MainActivity : AppCompatActivity() {
 
             //check validation
             if(TextUtils.isEmpty(login_mobile.text.toString()) and  TextUtils.isEmpty(login_password.text.toString()) ){
-                Toast.makeText(this, "Input both fields", Toast.LENGTH_LONG).show()
+                login_mobile.setError("Please Provide a Phone Number");
+                login_password.setError("Please Provide a Password");
+
             }
 
             else if(response.equals("0")) {
