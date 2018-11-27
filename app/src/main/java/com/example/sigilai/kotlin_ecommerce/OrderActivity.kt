@@ -84,7 +84,7 @@ class OrderActivity : AppCompatActivity() {
             rq.add(sr)
 
         }
-
+            /**WHEN CONFIRM ORDER IS CLICKED**/
             if (item?.itemId==R.id.item_confirm)
             {
 
@@ -92,7 +92,8 @@ class OrderActivity : AppCompatActivity() {
                 var rq:RequestQueue=Volley.newRequestQueue(this)
                 var sr = StringRequest(Request.Method.GET,url,Response.Listener { response ->
 
-                    var i = Intent(this,HomeActivity::class.java)
+                    var i = Intent(this,TotalActivity::class.java)
+                    i.putExtra("bno",response)//we pass the bill number to the total activity
                     startActivity(i)
 
                 },Response.ErrorListener { error ->

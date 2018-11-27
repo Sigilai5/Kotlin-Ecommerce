@@ -35,11 +35,11 @@ class MainActivity : AppCompatActivity() {
             }
 
             else if(response.equals("0")) {
-                Toast.makeText(this, "Invalid credentials", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Invalid credentials", Toast.LENGTH_SHORT).show()
             }
 
             else {
-                Toast.makeText(this, "Login Successfull!", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Login Successfull!", Toast.LENGTH_SHORT).show()
 
                 UserInfo.mobile = login_mobile.text.toString()
                 var intent = Intent(this, HomeActivity::class.java)
