@@ -6,6 +6,7 @@ class UserInfo {
         var mobile:String=""
         var itemId:Int=0
         var quantity:Int=0
+        var client_id:String="AaVutfnxtDp8exsjQRl-cmRaahWpy20HzwwT_HFeFdGpoefWS1WRwCZodyXp9s6v-BJAixLevk6Cuk_j"
     }
 
 
